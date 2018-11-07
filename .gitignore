@@ -1,0 +1,11 @@
+# Compiled code
+build
+
+# Dependency directory
+node_modules
+
+# History files
+.history
+
+# The .env file
+.env
