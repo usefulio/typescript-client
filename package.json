@@ -7,13 +7,12 @@
     "dev": "npm run prebuild && parcel serve src/index.html --out-dir dist --port 3000 --open"
   },
   "dependencies": {
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"
   },
   "devDependencies": {
-    "less": "^3.8.1",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
     "parcel-bundler": "^1.10.3",
     "sass": "^1.14.3",
     "typescript": "^3.1.6"
