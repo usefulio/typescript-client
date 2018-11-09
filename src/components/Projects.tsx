@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import Project, { IProject } from "./Project";
+import { Project, ProjectProps } from "./Project";
 
-declare interface ProjectProps {
-  projects: IProject[];
+export interface ProjectsProps {
+  projects: ProjectProps[];
 }
 
-export default class Projects extends Component {
+export class Projects extends Component<ProjectsProps> {
   static propTypes = {
     projects: PropTypes.arrayOf(PropTypes.object),
   };
 
   render() {
-    const { projects } = this.props as ProjectProps;
+    const { projects } = this.props;
 
     return (
       <table>
