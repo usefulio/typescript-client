@@ -1,7 +1,17 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-export class App extends Component {
+// Components.
+import Home from "../pages/Home";
+
+export default class App extends Component {
   render() {
-    return <div>Hello World!</div>;
+    return (
+      <Router>
+        <div>
+          <Route path="/" exact component={Home} />
+        </div>
+      </Router>
+    );
   }
 }

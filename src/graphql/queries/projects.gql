@@ -1,0 +1,11 @@
+query {
+  projects {
+    id
+    name
+    createdAt
+    user {
+      id
+      fullName
+    }
+  }
+}

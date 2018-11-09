@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "lib": ["dom", "es2016", "esnext.asynciterable"],
     "allowSyntheticDefaultImports": true,
     "jsx": "react"
   }
