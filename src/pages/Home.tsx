@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { Query } from "react-apollo";
 
 // Components.
 import { Error } from "../components/Error";
 import { Loading } from "../components/Loading";
-
-// Components.
 import { Projects } from "../components/Projects";
+import { ProjectsQuery } from "../components/ProjectsQuery";
 
 // GraphQL queries.
 import projectsQuery from "../graphql/queries/projects.gql";
@@ -14,7 +12,7 @@ import projectsQuery from "../graphql/queries/projects.gql";
 export default class Home extends Component {
   render() {
     return (
-      <Query query={projectsQuery}>
+      <ProjectsQuery query={projectsQuery}>
         {({ loading, error, data }) => {
           if (loading) {
             return <Loading />;
@@ -23,7 +21,7 @@ export default class Home extends Component {
           }
           return <Projects projects={data.projects} />;
         }}
-      </Query>
+      </ProjectsQuery>
     );
   }
 }
