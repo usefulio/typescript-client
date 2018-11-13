@@ -1,5 +1,5 @@
-query projects {
-  projects {
+query project($id: Int!) {
+  project(id: $id) {
     id
     name
     createdAt

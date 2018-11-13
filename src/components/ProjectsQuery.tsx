@@ -1,9 +1,9 @@
 import { Query } from "react-apollo";
 
-import { ProjectProps } from "./Project";
+import { Project } from "../types/Project";
 
 interface Data {
-  projects: ProjectProps[];
+  projects: Project[];
 }
 
 interface Variables {}
