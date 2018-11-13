@@ -6,6 +6,7 @@ import { RouteComponentProps, withRouter } from "react-router-dom";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { Theme, withStyles, WithStyles } from "@material-ui/core/styles";
 import { Error } from "../components/Error";
@@ -46,6 +47,13 @@ class Projects extends Component<Props> {
           const createdAt = new Date(data.project.createdAt).toLocaleString();
           return (
             <Table className={classes.root}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>ID</TableCell>
+                  <TableCell>Project Name</TableCell>
+                  <TableCell>Creation Date</TableCell>
+                </TableRow>
+              </TableHead>
               <TableBody>
                 <TableRow>
                   <TableCell>{data.project.id}</TableCell>
