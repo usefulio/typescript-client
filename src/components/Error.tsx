@@ -8,11 +8,10 @@ export interface ErrorProps {
 
 export class Error extends Component<ErrorProps> {
   static propTypes = {
-    error: PropTypes.instanceOf(ApolloError),
+    error: PropTypes.instanceOf(ApolloError).isRequired,
   };
 
   render() {
-    const { error } = this.props;
-    return <div>{JSON.stringify(error)}</div>;
+    return <div>{this.props.error.message}</div>;
   }
 }
