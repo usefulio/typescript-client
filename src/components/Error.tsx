@@ -1,16 +1,11 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import { ApolloError } from "apollo-client";
 
-export interface ErrorProps {
+interface Props {
   error: ApolloError;
 }
 
-export class Error extends Component<ErrorProps> {
-  static propTypes = {
-    error: PropTypes.instanceOf(ApolloError).isRequired,
-  };
-
+export class Error extends React.Component<Props> {
   render() {
     return <div>{this.props.error.message}</div>;
   }

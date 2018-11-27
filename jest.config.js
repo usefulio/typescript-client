@@ -3,8 +3,9 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  testMatch: ["**/resolvers/**/*.ts"],
+  testMatch: ["**/components/*.tsx", "**/pages/*.tsx"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   roots: ["<rootDir>/tests"],
   testEnvironment: "jsdom",
+  setupTestFrameworkScriptFile: "./tests/setup.ts",
 };

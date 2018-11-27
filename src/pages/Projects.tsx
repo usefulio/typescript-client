@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import gql from "graphql-tag";
+import * as React from "react";
 import { Link } from "react-router-dom";
 
 // Components.
@@ -12,8 +13,19 @@ import { Error } from "../components/Error";
 import { Loading } from "../components/Loading";
 import { ProjectsQuery } from "../components/ProjectsQuery";
 
-// GraphQL queries.
-import projectsQuery from "../graphql/queries/projects.gql";
+export const PROJECTS_QUERY = gql`
+  query projects {
+    projects {
+      id
+      name
+      createdAt
+      user {
+        id
+        fullName
+      }
+    }
+  }
+`;
 
 const styles = (theme: Theme) => ({
   root: {
@@ -23,12 +35,12 @@ const styles = (theme: Theme) => ({
 
 interface Props extends WithStyles<typeof styles> {}
 
-class Projects extends Component<Props> {
+class Projects extends React.Component<Props> {
   render() {
     const { classes } = this.props;
 
     return (
-      <ProjectsQuery query={projectsQuery}>
+      <ProjectsQuery query={PROJECTS_QUERY}>
         {({ loading, error, data }) => {
           if (loading) {
             return <Loading />;
@@ -69,4 +81,6 @@ class Projects extends Component<Props> {
   }
 }
 
-export default withStyles(styles)(Projects);
+const WrappedProjects = withStyles(styles)(Projects);
+
+export { WrappedProjects as Projects };

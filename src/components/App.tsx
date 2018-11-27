@@ -1,19 +1,14 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import * as React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 // Components.
-import Projects from "../pages/Projects";
-import Project from "../pages/Project";
+import { Routes } from "./Routes";
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <Route path="/" exact component={Projects} />
-          <Route path="/projects" exact component={Projects} />
-          <Route path="/projects/:id" component={Project} />
-        </div>
+        <Routes />
       </Router>
     );
   }
