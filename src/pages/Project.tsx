@@ -38,11 +38,11 @@ type RouteParams = {
   id: string;
 };
 
-interface Props
+export interface ProjectProps
   extends WithStyles<typeof styles>,
     RouteComponentProps<RouteParams> {}
 
-class Project extends React.Component<Props> {
+class Project extends React.Component<ProjectProps> {
   render() {
     const { classes, match } = this.props;
     return (

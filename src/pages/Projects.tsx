@@ -33,9 +33,9 @@ const styles = (theme: Theme) => ({
   },
 });
 
-interface Props extends WithStyles<typeof styles> {}
+export interface ProjectsProps extends WithStyles<typeof styles> {}
 
-class Projects extends React.Component<Props> {
+class Projects extends React.Component<ProjectsProps> {
   render() {
     const { classes } = this.props;
 

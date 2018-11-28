@@ -1,17 +1,40 @@
 import * as React from "react";
-import { Route } from "react-router-dom";
 
 // Components.
+import { SignIn } from "../pages/SignIn";
+import { PrivateRoute } from "./PrivateRoute";
 import { Projects } from "../pages/Projects";
 import { Project } from "../pages/Project";
+import { SignInRoute } from "./SignInRoute";
 
 export class Routes extends React.Component {
   render() {
+    const signInPath = "/signin";
     return (
       <React.Fragment>
-        <Route path="/" exact component={Projects} />
-        <Route path="/projects" exact component={Projects} />
-        <Route path="/projects/:id" component={Project} />
+        <PrivateRoute
+          path="/"
+          exact
+          component={Projects}
+          redirectTo={signInPath}
+        />
+        <SignInRoute
+          path={signInPath}
+          exact
+          component={SignIn}
+          redirectTo="/"
+        />
+        <PrivateRoute
+          path="/projects"
+          exact
+          component={Projects}
+          redirectTo={signInPath}
+        />
+        <PrivateRoute
+          path="/projects/:id"
+          component={Project}
+          redirectTo={signInPath}
+        />
       </React.Fragment>
     );
   }
